@@ -1,0 +1,23 @@
+    // Complete the hasCycle function below.
+
+    /*
+     * For your reference:
+     *
+     * SinglyLinkedListNode {
+     *     int data;
+     *     SinglyLinkedListNode next;
+     * }
+     *
+     */
+static boolean hasCycle(SinglyLinkedListNode head){
+    SinglyLinkedListNode i=head;
+    SinglyLinkedListNode j=head.next;
+    while(j!=null && i!=null && j.next!=null){
+        if(j==i){
+            return true;
+        }
+        i=i.next;
+        j=j.next.next;
+    }
+    return false;
+}
